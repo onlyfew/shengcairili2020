@@ -20,22 +20,17 @@ Page({
     today: getDateStr(new Date()),
     currentIndex: 0,
     images: ['https://mmbiz.qpic.cn/mmbiz_png/STgL38QeY7WjQialoAIias1OlgbVyEmAlVX1I4RhichF8Z0CBC3Jb8thWxbMPhMa7icaSIdHQE7ib3bdVmTKXsM0BQw/0?wx_fmt=png'],
-    currentImage: 1,
-    pageCenterHeight: 500,
-    nowTime: 123
-  },
-
-
-  getNowTime: function () {
-    var now = new Date()
-    return now.getTime() + ''
+    currentImage: 0,
+    pageCenterHeight: 500
   },
 
   generateWeekDays: function (currentDay) {
-    var weekIndex = currentDay.getDate()
+    console.log(currentDay)
+    var weekIndex = currentDay.getDay()
+    console.log(weekIndex)
     var weekDays = [new Date(currentDay), new Date(currentDay), new Date(currentDay), new Date(currentDay), new Date(currentDay), new Date(currentDay), new Date(currentDay)]
     for (var i = 0; i < 7; i++) {
-      weekDays[i].setDate(currentDay.getDate() + (i - (weekIndex + 6) % 7))
+      weekDays[i].setDate(currentDay.getDate() + (i - weekIndex))
     }
     return weekDays;
   },
@@ -110,8 +105,7 @@ Page({
       currentIndex: currentDay.getDay(),
       currentWeekIndex: currentWeekIndex,
       images: images,
-      currentImage: 1,
-      nowTime: this.getNowTime()
+      currentImage: 1
     }, ()=>{
       this.setNavBarTitle(currentDay)
     })
@@ -131,8 +125,7 @@ Page({
       currentDay: currentDayStr,
       currentIndex: newIndex,
       images: images,
-      currentImage: 1,
-      nowTime: this.getNowTime()
+      currentImage: 1
     }, () => {
       this.setNavBarTitle(currentDay)
     })
@@ -155,8 +148,6 @@ Page({
     var dateStr = getDateStr(date)
     var todayStr = getDateStr(new Date())
     if (dateStr == todayStr) {
-      // console.log("temp")
-      // return "http://image.onlyfew.cn/shengcairili/temp2.png?v="+this.getNowTime()
       //8:30前
       if (getTimeStr(new Date()) < "08:30:00") {
         //宜等待
@@ -192,6 +183,7 @@ Page({
     }
     else {
       this.setCurrentDay(new Date())
+      // this.setCurrentDay(strToDate('2020-03-04'))
     }
   },
 

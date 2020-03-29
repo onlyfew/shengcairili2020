@@ -1,5 +1,5 @@
 <!--pages/calendar/calendar.wxml-->
-<wxs src="../../utils/util.wxs" module="util"/>
+<!-- <wxs src="../../utils/util.wxs" module="util"/> -->
 
 <view class="container">
   <view class="page-header">
@@ -25,7 +25,7 @@
   <view class="page-body">
     <swiper current="{{currentImage}}" style="height:{{pageCenterHeight}}rpx" bindchange="imageChange">
       <block wx:for="{{images}}" wx:key="*this">
-        <swiper-item item-id="{{util.haveSubStr(item,'temp2')?nowTime:'swiper'+index}}">
+        <swiper-item>
           <image style="width: 100%; height: 100%;" mode="aspectFit" src="{{item}}" show-menu-by-longpress="true"></image>
         </swiper-item>
       </block>
