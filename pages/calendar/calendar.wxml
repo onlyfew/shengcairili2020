@@ -1,0 +1,41 @@
+<!--pages/calendar/calendar.wxml-->
+<wxs src="../../utils/util.wxs" module="util"/>
+
+<view class="container">
+  <view class="page-header">
+    <!-- <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%"> -->
+    <swiper current="{{currentWeekIndex}}" bindchange="weekChange">
+      <block wx:for="{{weekDaysStr}}" wx:for-index="idx" wx:for-item="weekDaysItem">
+        <swiper-item>
+          <view class="week-index">
+            <block wx:for="{{weekIndex}}" wx:key="*this">
+              <text>{{item}}</text>
+            </block>
+          </view>
+          <view class="week-day">
+            <block wx:for="{{weekDaysItem}}" wx:key="*this">
+              <view class="day-txt {{weekDays[idx][index]==today ? 'day-red' : ''}} {{currentIndex==index ? 'day-gray' : ''}}" data-dayindex="{{index}}" bindtap="dayChange">{{item}}</view>
+            </block>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- </scroll-view> -->
+  </view>
+  <view class="page-body">
+    <swiper current="{{currentImage}}" style="height:{{pageCenterHeight}}rpx" bindchange="imageChange">
+      <block wx:for="{{images}}" wx:key="*this">
+        <swiper-item item-id="{{util.haveSubStr(item,'temp2')?nowTime:'swiper'+index}}">
+          <image style="width: 100%; height: 100%;" mode="aspectFit" src="{{item}}" show-menu-by-longpress="true"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="page-footer">
+    <button class="footer_btn" open-type="share"><mp-icon open-type="share" icon="share" size="{{25}}"></mp-icon></button>
+    <!-- <button class="footer_btn" bindtap="handleSaveImage"><mp-icon icon="download" size="{{25}}"></mp-icon></button> -->
+    <button class="footer_btn" bindtap="handleToday"><mp-icon icon="refresh" size="{{25}}"></mp-icon></button>
+    <button class="footer_btn" bindtap="handleBuy"><mp-icon icon="shop" size="{{25}}"></mp-icon></button>
+    <button class="footer_btn" bindtap="handleAbout"><mp-icon icon="info" size="{{25}}"></mp-icon></button>
+  </view>
+</view>

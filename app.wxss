@@ -1,0 +1,25 @@
+/**app.wxss**/
+/* reset */
+page {
+  background-color: #F8F8F8;
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.6;
+}
+checkbox, radio{
+  margin-right: 10rpx;
+}
+form{
+  width: 100%;
+}
+input {
+  width: 100%;
+}
+
+/* lib */
+.strong{
+  font-weight: bold;
+}
+.tc{
+  text-align: center;
+}

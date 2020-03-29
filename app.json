@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/calendar/calendar",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "生财日历2020",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "mp-icon": "components/icon/icon"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

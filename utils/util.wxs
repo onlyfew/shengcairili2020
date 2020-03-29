@@ -1,0 +1,22 @@
+// 作用于wxml中的函数
+// date格式如：2019-12-12 12:20:00 或者 2019/12/12 12:20:00
+var formatYMD = function (date) {
+  var date = getDate(date);
+  console.log(date)
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDay()
+  return year + '/' + month + '/' + day
+}
+
+var haveSubStr = function(str, subStr) {
+  if (str.indexOf(subStr)>-1) {
+    return true
+  }
+  return false
+}
+
+module.exports = {
+  formatYMD: formatYMD,
+  haveSubStr: haveSubStr
+}

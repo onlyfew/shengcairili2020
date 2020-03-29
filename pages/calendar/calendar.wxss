@@ -1,0 +1,79 @@
+/* pages/calendar/calendar.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: space-between;
+  font-size: 24rpx;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+
+.page-header {
+    height: 120rpx;
+}
+
+.page-body {
+    flex: 1;
+}
+
+.page-footer {
+    height: 120rpx;
+    padding-top: 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+swiper{
+  height: 100%;
+}
+
+.week-index{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 10rpx;
+}
+.week-day{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 10rpx;
+}
+
+.day-txt{
+  display:inline-block;
+  min-width:8px;
+  width: 60rpx;
+  height: 60rpx;
+  text-align:center;
+  font-size:36rpx;
+  vertical-align:middle;
+}
+
+.day-red{
+  border-radius:60rpx;
+  background-color:#FA5151;
+  color:#FFFFFF;
+}
+
+.day-gray{
+  border-radius:60rpx;
+  background-color:#222222;
+  color:#FFFFFF;
+}
+
+.footer_btn {
+    border: none;
+    border-radius: 0;
+    height: 60rpx;
+    width: 60rpx;
+    line-height: 60rpx;
+    font-size: 36rpx;
+    padding: 0rpx;
+}
+button::after {
+  border: none;
+  border-radius: 0;
+}
