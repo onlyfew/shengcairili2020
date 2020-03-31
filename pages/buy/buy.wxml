@@ -1,0 +1,4 @@
+<!--pages/buy/buy.wxml-->
+<view class="container">
+  <image style="width: 100%; height: 100%;" mode="aspectFit" src="../../images/buy.jpeg" show-menu-by-longpress="true" lazy-load="true"></image>
+</view>

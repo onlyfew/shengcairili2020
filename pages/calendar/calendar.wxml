@@ -26,7 +26,7 @@
     <swiper current="{{currentImage}}" style="height:{{pageCenterHeight}}rpx" bindchange="imageChange">
       <block wx:for="{{images}}" wx:key="*this">
         <swiper-item>
-          <image style="width: 100%; height: 100%;" mode="aspectFit" src="{{item}}" show-menu-by-longpress="true"></image>
+          <image style="width: 100%; height: 100%;" mode="aspectFit" src="{{item}}" show-menu-by-longpress="true" lazy-load="true"></image>
         </swiper-item>
       </block>
     </swiper>
@@ -34,8 +34,20 @@
   <view class="page-footer">
     <button class="footer_btn" open-type="share"><mp-icon open-type="share" icon="share" size="{{25}}"></mp-icon></button>
     <!-- <button class="footer_btn" bindtap="handleSaveImage"><mp-icon icon="download" size="{{25}}"></mp-icon></button> -->
-    <button class="footer_btn" bindtap="handleToday"><mp-icon icon="refresh" size="{{25}}"></mp-icon></button>
+    <button class="footer_btn" bindtap="handleToday">
+      <mp-icon icon="time" size="{{25}}"></mp-icon>
+      <!-- <van-icon name="calender-o" size="{{25}}" /> -->
+    </button>
     <button class="footer_btn" bindtap="handleBuy"><mp-icon icon="shop" size="{{25}}"></mp-icon></button>
     <button class="footer_btn" bindtap="handleAbout"><mp-icon icon="info" size="{{25}}"></mp-icon></button>
   </view>
+  <van-action-sheet
+    show="{{ isShowAction }}"
+    actions="{{ actions }}"
+    cancel-text="取消"
+    bind:close="onCloseAction"
+    bind:select="onSelectAction"
+    bind:cancel="onCloseAction"
+  />
+  <van-calendar show="{{ isShowCalendar }}" show-confirm="{{ false }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" default-date="{{ defaultDate }}" bind:close="onCloseCalendar" bind:confirm="onConfirmCalendar" />
 </view>

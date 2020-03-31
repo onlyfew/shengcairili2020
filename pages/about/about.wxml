@@ -1,0 +1,44 @@
+<!--pages/buy/buy.wxml-->
+<view class="container">
+  <!-- <view> -->
+    <text class="h3">一、生财日历是什么？</text>
+    <text class="p">
+
+        从字面上不难看出，这是一款以<text class="strong">生财、赚钱</text>为主题的日历。不仅如此，它还是一款实体版日历，是<text class="strong">生财有术</text>社群最新一期<text class="strong">“大航海计划”</text>的实战产品。
+
+    日历内容选自社群<text class="strong">5800+</text>人的生财实践，由<text class="strong">500位</text>自发报名的社群成员从<text class="strong">1000+</text>篇精华主题中精心筛选，最终呈现<text class="strong">366个</text>生财锦囊。
+
+    《生财日历》将助力你2020年每个日子都很值钱。
+
+
+    </text>
+  <!-- </view> -->
+  <view>
+    <text class="h3">二、生财有术社群是什么？</text>
+    <text class="p">
+
+生财有术，一个谈钱不伤感情的社群，创建于2017年初，已运行3年。这个圈子不便宜，但很值。
+
+6200+位实战派，10000+篇主题，1200+篇精华，覆盖生财各领域，少讲大道理，只想聊赚钱。
+
+>【固定专栏】周一＃轻享，周三＃生财合伙人 周五＃一起赚美元;
+>【生财实战】500人大航海生财日历，短视频实战，已孵化多个估值过亿及数千万项目;
+>【资源对接】专人对接、升级朋友圏、生财茶馆、快闪群、生财有资源，圈友资源免费对接;
+>【线下活动)饭局的诱惑、同城见面会、垂直主题闭门会、龙珠俱乐部、全国见面会、生财有术智囊团;
+
+在这里，谈钱不伤感情，在这里，越谈钱越有感情。
+
+
+    </text>
+  </view>
+
+  <view>
+    <text class="h3">三、如何加入生财有术社群？</text>
+    <image style="width: 90%;margin-top:30rpx;margin-bottom:30rpx;" mode="aspectFit" src="../../images/shengcaiyoushu.png" show-menu-by-longpress="true" lazy-load="true"></image>
+  </view>
+
+  <view>
+    <text class="h3">四、如何给本小程序提意见？</text>
+    <image style="width: 90%;margin-top:30rpx;" mode="aspectFit" src="../../images/zhilishu.jpeg" show-menu-by-longpress="true" lazy-load="true"></image>
+  </view>
+</view>

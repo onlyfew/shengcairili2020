@@ -21,7 +21,13 @@ Page({
     currentIndex: 0,
     images: ['https://mmbiz.qpic.cn/mmbiz_png/STgL38QeY7WjQialoAIias1OlgbVyEmAlVX1I4RhichF8Z0CBC3Jb8thWxbMPhMa7icaSIdHQE7ib3bdVmTKXsM0BQw/0?wx_fmt=png'],
     currentImage: 0,
-    pageCenterHeight: 500
+    pageCenterHeight: 500,
+    isShowAction: false,
+    actions: [{name: '回到今天', color: '#07c160'},{name: '跳转到指定日期'}],
+    isShowCalendar: false,
+    minDate: new Date(2020, 0, 1).getTime(),
+    maxDate: new Date(2020, 11, 31).getTime(),
+    defaultDate: new Date().getTime()
   },
 
   generateWeekDays: function (currentDay) {
@@ -240,10 +246,14 @@ Page({
   },
 
   handleToday(e) {
-    this.setCurrentDay(new Date())
+    this.setData({ isShowAction: true });
+    // this.setCurrentDay(new Date())
   },
 
   handleBuy(e) {
+    wx.navigateTo({ url: '/pages/buy/buy'})
+    /*
+    return
     var imgSrc = "https://mmbiz.qpic.cn/mmbiz_jpg/STgL38QeY7WjQialoAIias1OlgbVyEmAlVSz3pLic8QvoISblk2C2B8br3owdaTacITS9N9Bia4Ejlp4S9S4LphrEw/0?wx_fmt=jpeg"
 
     wx.getImageInfo({
@@ -256,9 +266,12 @@ Page({
         })
       }
     })
+    */
   },
 
   handleAbout(e) {
+    wx.navigateTo({ url: '/pages/about/about' })
+    /*
     wx.showLoading({
       title: '加载中',
     })
@@ -287,11 +300,31 @@ Page({
         })
       }
     })
+    */
+  },
 
-    // wx.previewImage({
-    //   current: "../../images/shengcairili.png",
-    //   urls: ["../../images/shengcairili.png", "../../images/shengcaiyoushu.png", "../../images/zhilishu.png"]
-    // })
+  onCloseAction() {
+    this.setData({ isShowAction: false });
+  },
+
+  onSelectAction(event) {
+    console.log(event.detail);
+    if (event.detail.name == '回到今天') {
+      this.setCurrentDay(new Date())
+    }
+    else {
+      this.setData({ isShowCalendar: true });
+    }
+  },
+
+  onCloseCalendar() {
+    this.setData({ isShowCalendar: false });
+  },
+
+  onConfirmCalendar(event) {
+    console.log(event)
+    this.onCloseCalendar()
+    this.setCurrentDay(event.detail)
   },
 
   /**

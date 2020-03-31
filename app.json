@@ -2,7 +2,9 @@
   "pages": [
     "pages/calendar/calendar",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/about/about",
+    "pages/buy/buy"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -11,7 +13,10 @@
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
-    "mp-icon": "components/icon/icon"
+    "mp-icon": "components/icon/icon",
+    "van-action-sheet": "components/vant-weapp/dist/action-sheet/index",
+    "van-calendar": "components/vant-weapp/dist/calendar/index",
+    "van-icon": "components/vant-weapp/dist/icon/index"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

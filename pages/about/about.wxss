@@ -1,0 +1,62 @@
+/* pages/buy/buy.wxss */
+
+.container {
+  width: 90%;
+  height: 100%;
+  min-height: 100%;
+  font-size: 24rpx;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+  padding: 40rpx;
+}
+
+.h1 {
+    /* font-family: "Lato", sans-serif; */
+    font-size: 36rpx;
+    font-weight: 900;
+    line-height: 1.20;
+    opacity: 1.00;
+    margin-top: 0rpx;
+    margin-bottom: 20rpx;
+    letter-spacing: -0.72rpx;
+    word-spacing: 0.00rpx;
+    text-transform: none;
+}
+
+.h2 {
+    /* font-family: "Lato", sans-serif; */
+    font-size: 32rpx;
+    font-weight: 700;
+    line-height: 1.20;
+    opacity: 1.00;
+    margin-top: 60rpx;
+    margin-bottom: 10rpx;
+    letter-spacing: -0.72rpx;
+    word-spacing: 0.00px;
+    text-transform: none;
+}
+
+.h3 {
+    /* font-family: "Lato", sans-serif; */
+    font-size: 36rpx;
+    font-weight: 400;
+    line-height: 1.20;
+    opacity: 1.00;
+    margin-top: 60rpx;
+    margin-bottom: 10rpx;
+    text-transform: none;
+}
+
+.p {
+    /* font-family: "proxima-nova-thin", sans serif; */
+    font-size: 32rpx;
+    font-weight: 400;
+    line-height: 1.60;
+    opacity: 0.70;
+    margin-top: 0rpx;
+    margin-bottom: 50rpx;
+    text-transform: none;
+}
+
+.strong {
+  font-weight:bold
+}
