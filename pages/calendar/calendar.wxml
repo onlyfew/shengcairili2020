@@ -26,7 +26,8 @@
     <swiper current="{{currentImage}}" style="height:{{pageCenterHeight}}rpx" bindchange="imageChange">
       <block wx:for="{{images}}" wx:key="*this">
         <swiper-item>
-          <image style="width: 100%; height: 100%;" mode="aspectFit" src="{{item}}" show-menu-by-longpress="true" lazy-load="true"></image>
+          <image style="width: 100%; height: 100%;" mode="aspectFit" src="{{item}}" lazy-load="true" bindtap="handleImagePreview"></image>
+           <!-- show-menu-by-longpress="true" -->
         </swiper-item>
       </block>
     </swiper>
@@ -38,6 +39,7 @@
       <mp-icon icon="time" size="{{25}}"></mp-icon>
       <!-- <van-icon name="calender-o" size="{{25}}" /> -->
     </button>
+    <button class="footer_btn" bindtap="handleComment"><mp-icon icon="comment" size="{{25}}"></mp-icon></button>
     <button class="footer_btn" bindtap="handleBuy"><mp-icon icon="shop" size="{{25}}"></mp-icon></button>
     <button class="footer_btn" bindtap="handleAbout"><mp-icon icon="info" size="{{25}}"></mp-icon></button>
   </view>

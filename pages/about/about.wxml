@@ -1,6 +1,6 @@
 <!--pages/buy/buy.wxml-->
-<view class="container">
-  <!-- <view> -->
+<view class="container" style="overflow-x:hidden">
+<!--
     <text class="h3">一、生财日历是什么？</text>
     <text class="p">
 
@@ -12,7 +12,6 @@
 
 
     </text>
-  <!-- </view> -->
   <view>
     <text class="h3">二、生财有术社群是什么？</text>
     <text class="p">
@@ -31,14 +30,14 @@
 
     </text>
   </view>
-
+-->
   <view>
-    <text class="h3">三、如何加入生财有术社群？</text>
+    <text class="h3">一、如何加入生财有术社群？</text>
     <image style="width: 90%;margin-top:30rpx;margin-bottom:30rpx;" mode="aspectFit" src="../../images/shengcaiyoushu.png" show-menu-by-longpress="true" lazy-load="true"></image>
   </view>
 
   <view>
-    <text class="h3">四、如何给本小程序提意见？</text>
+    <text class="h3">二、如何给本小程序提意见？</text>
     <image style="width: 90%;margin-top:30rpx;" mode="aspectFit" src="../../images/zhilishu.jpeg" show-menu-by-longpress="true" lazy-load="true"></image>
   </view>
 </view>

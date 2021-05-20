@@ -26,7 +26,7 @@ Page({
     actions: [{name: '回到今天', color: '#07c160'},{name: '跳转到指定日期'}],
     isShowCalendar: false,
     minDate: new Date(2020, 0, 1).getTime(),
-    maxDate: new Date(2020, 11, 31).getTime(),
+    maxDate: new Date(2021, 11, 31).getTime(),
     defaultDate: new Date().getTime()
   },
 
@@ -148,7 +148,7 @@ Page({
   },
 
   getImageUrl: function (date) {
-    if (date.getFullYear() < 2020 || date.getFullYear() > 2020) {
+    if (date.getFullYear() < 2020) { //|| date.getFullYear() > 2020
       return "http://image.onlyfew.cn/shengcairili/only2020.png"
     }
     var dateStr = getDateStr(date)
@@ -250,23 +250,60 @@ Page({
     // this.setCurrentDay(new Date())
   },
 
+  handleImagePreview(e) {
+    wx.previewImage({
+      urls: [this.getImageUrl(strToDate(this.data.currentDay))]
+    })
+  },
+
   handleBuy(e) {
     wx.navigateTo({ url: '/pages/buy/buy'})
-    /*
-    return
-    var imgSrc = "https://mmbiz.qpic.cn/mmbiz_jpg/STgL38QeY7WjQialoAIias1OlgbVyEmAlVSz3pLic8QvoISblk2C2B8br3owdaTacITS9N9Bia4Ejlp4S9S4LphrEw/0?wx_fmt=jpeg"
+  },
 
-    wx.getImageInfo({
-      src: imgSrc,
-      success(res) {
-        console.log(res)
-        wx.previewImage({
-          current: res.path,
-          urls: [res.path]
-        })
+  handleComment(e) {
+    // var currentDay = strToDate(this.data.currentDay)
+    var currentDay = this.data.currentDay
+    const db = wx.cloud.database()
+    db.collection('gongdu_topic').where({
+      date_str: currentDay
+    })
+    .get({
+      success: function(res) {
+        // res.data 是包含以上定义的两条记录的数组
+        var topics = res.data
+        console.log(topics)
+        if (topics.length > 0) {
+          wx.navigateToMiniProgram({
+            appId: 'wx4f706964b979122a',
+            path: 'pages/topicdetail/topicdetail?topic_id='+topics[0].topic_id
+          })
+        }
+        else {
+          var nickName = wx.getStorageSync('nickName')
+          console.log(nickName)
+          if (nickName.indexOf("支离书") != -1 || nickName.indexOf("黄小鱼") != -1) {
+            wx.navigateTo({
+              url: '/pages/topic/topic?dateStr='+currentDay,
+              // url: '/pages/topic/topic',
+              success(res) {
+                console.log(res)
+              },
+              fail(res) {
+                console.log(res)
+              }
+            })
+          }
+          else {
+            wx.showToast({
+              title: '无法跳转到星球作业页面，请稍候再试',
+              icon: 'none',
+              duration: 2000
+            })  
+          }        
+        }
       }
     })
-    */
+
   },
 
   handleAbout(e) {

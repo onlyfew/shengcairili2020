@@ -4,12 +4,13 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/about/about",
-    "pages/buy/buy"
+    "pages/buy/buy",
+    "pages/topic/topic"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "生财日历2020",
+    "navigationBarTitleText": "生财日历2021",
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
